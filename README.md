@@ -1,6 +1,6 @@
 ## Slender Recognition
 
-# What do we do?
+# What do we do? https://discord.gg/QfkSVwVuET
 This is an online database that helps scripts and functions alike recognize "Slenders" AKA Online Daters especially those in possesion of TikTok.
 
 # What do we store?
