@@ -64,7 +64,7 @@ end
 local resultado = "emos = {"
 
 for emoName,emoTbl in next, emo.players do
-    resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"ItemsAmount\"] = "..emoTbl.EmoItemsAmount..",\n [\"AccountAge\"] = "..emoTbl.AccountAge..",\n [\"UserId\"] = "..emoTbl.UserId..",\n   }," 
+    resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"ItemsAmount\"] = "..emoTbl.EmoItemsAmount..",\n        [\"AccountAge\"] = "..emoTbl.AccountAge..",\n        [\"UserId\"] = "..emoTbl.UserId..",\n   }," 
 end
 
 resultado = resultado.."\n}"
