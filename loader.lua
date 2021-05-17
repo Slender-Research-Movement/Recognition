@@ -46,6 +46,8 @@ end
         starterGui:SetCore("SendNotification", {Title = player.Name.." ", Text = " Has "..tostring(itemCount).." items.", Icon = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid="..player.UserId})
         emo.players[player.Name] = {
             ["Player"] = player,
+            ["AccountAge"] = player.AccountAge,
+	    ["UserId"] = player.UserId,
             ["EmoItemsAmount"] = tostring(itemCount)
         }
     end
@@ -62,7 +64,7 @@ end
 local resultado = "emos = {"
 
 for emoName,emoTbl in next, emo.players do
-    resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"ItemsAmount\"] = "..emoTbl.EmoItemsAmount..",\n    }," 
+    resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"ItemsAmount\"] = "..emoTbl.EmoItemsAmount..",\n [\"AccountAge\"] = "..emoTbl.AccountAge..",\n [\"UserId\"] = "..emoTbl.UserId..",\n   }," 
 end
 
 resultado = resultado.."\n}"
