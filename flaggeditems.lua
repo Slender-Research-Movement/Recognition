@@ -1,0 +1,71 @@
+items = {
+    5890452119, --Grey-Punk-Rock-Headphones
+    96079043,   -- Extreme Headphones
+    9250643,    -- Meanie Face
+    6550129,    -- Scissors
+    6202802727, -- Black-Crossed-Earrings
+    139607718,  -- Korblox Right Leg
+    139607673,  -- Korblox Left Leg
+    134082579,  -- Headless Head
+    5037876398, -- Epic Mask
+    130213380,  -- ROBLOX-Madness-Face
+    42070576,   -- Epic-Face
+    1360068971, -- Red Iron Horns
+    5164293213, -- Barbed Chain
+    20644021,   -- Xtreme Happy
+    14030577,   -- I Hate Noobs
+    5197298886, -- Black Witch Hat
+    6275661250, -- Black Overgrown Hair
+    5164099769, -- Black Bat Wings
+    6008020755, -- Cool Boy Mullet
+    76059443,   -- Dark Blue Light Hair
+    439945661,  -- SKOTN
+    5231153973, -- Skull Bow
+    4487784350, -- Fashion Satchel
+    6536657658, -- Diamong Crossed Necklace
+    6351186573, -- Silver Star Hair Clip
+    5764649581, -- Cute Mini Pigtails & Chopped Bangs Black
+    116693764,  -- Historic 'Timmy' Gun
+    11884330,   -- Nerd Glasses
+    323476364,  -- Brown Scene Hair
+    16412796,   -- Sk9r Boi
+    20573078,   -- Shaggy
+    14404328,   -- Shutter Shades
+    5644883846, -- Cool Boy Hair
+    4932554634, -- Black Middle Hair
+    15967743,   -- Empyrean Reignment
+    5891039736, -- Black Anime Hair
+    10907541,   -- Mr. Chuckles
+    4875692416, -- Bunny Disguise
+    6564602366, -- Haircut
+    15885121,   -- Cutiemouse
+    4147355723, -- Friendly Hands
+    32058239,   -- So Funny
+    746767604,  -- Cheeks
+    14861743,   -- :P
+    5889792269, -- Black Victorian Necklace (1.0)
+    11419319,   -- Healing Potion
+    7074836,    -- Classic Vampire
+    6065923218, -- Basic White Mask
+    494291269,  -- Super Super Happy Face
+    77359955,   -- Lava Hair
+    2582750883, -- White Tiger Hat
+    6413085241, -- Black Swept Hair
+    15432080,   -- :3
+    4875925250, -- Black Agent Glasses
+    5592711871, -- Camera
+    5356584964, -- Iced Out Mariner Chain
+    6564649756, -- Haircut in Platinum
+    2041994779, -- 8-Bit Extra Extra Black Shades
+    4962758055, -- Kitty Hat
+    5315452348, -- White Bunny Backpack
+    5315424251, -- Black Bunny Backpack
+    4793984967, -- Purrfect Kitty Backpack
+    6741668558, -- Fur Lyfe
+    10860384,   -- The Big Dog
+    10658672,   -- Dalmation Hat
+    4506963722, -- Fluffy Black Ear Muffs
+    6682839632 -- Black Bad Girl Hair
+}
+
+return items
