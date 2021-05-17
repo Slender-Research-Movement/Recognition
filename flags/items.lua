@@ -4,6 +4,9 @@ items = {
     9250643,    -- Meanie Face
     6550129,    -- Scissors
     6202802727, -- Black-Crossed-Earrings
+    5319900634, -- Oldschool Run
+    5319909330, -- Oldschool Walk
+    1018553897, -- Bubbly Idle
     139607718,  -- Korblox Right Leg
     139607673,  -- Korblox Left Leg
     134082579,  -- Headless Head
