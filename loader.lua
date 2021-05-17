@@ -7,9 +7,9 @@ local localPlr = players.LocalPlayer
 local totalEmos = 0
 
 
-game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("This is an online database that helps scripts and functions alike recognize -Slenders- AKA Online Daters","All")
+--game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("This is an online database that helps scripts and functions alike recognize -Slenders- AKA Online Daters","All")
 wait(1)
-game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("We use our current data to estimate Slenders in popular genre games such as, Murder Mistery Two, and Ragdoll Engine. With our scripts, we save the best estimates in files and examine the most common data among them. ","All")
+--game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("We use our current data to estimate Slenders in popular genre games such as, Murder Mistery Two, and Ragdoll Engine. With our scripts, we save the best estimates in files and examine the most common data among them. ","All")
 
 local emo = {}
 emo.players = {}
@@ -91,6 +91,6 @@ BindableFunc.OnInvoke = function(args)
 end
 
 starterGui:SetCore("SendNotification", {Title = "There's a total of", Text = ""..tostring(totalEmos).." emos in this server", Icon = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid="..localPlr.UserId})
-game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("There's a total of "..tostring(totalEmos).." emos in this server","All")
+--game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("There's a total of "..tostring(totalEmos).." emos in this server","All")
 wait(1.5)
 starterGui:SetCore("SendNotification", {Title = "Save log of Players?", Text = "You will find this in your workspace folder", Duration = 5, Callback = BindableFunc, Button1 = "Yes!", Button2 = "No"})
