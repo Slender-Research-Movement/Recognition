@@ -13,7 +13,11 @@ names = {
   "Yara",
   "Zoe",
   "Chloe",
-  "Ashley"
+  "Ashley",
+  "cvpid",
+  "goth",
+  "sthu",
+  "ily"
 }
 
 return names
