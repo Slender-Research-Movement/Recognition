@@ -18,7 +18,15 @@ names = {
   "cvpid",
   "goth",
   "sthu",
-  "ily"
+  "ily",
+  "sky",
+  "clxver",
+  "Trvst",
+  "0h",
+  "xn",
+  "yo",
+  "cath",
+  "pret"
 }
 
 return names
