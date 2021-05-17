@@ -11,9 +11,25 @@ items = {
     130213380,  -- ROBLOX-Madness-Face
     42070576,   -- Epic-Face
     1360068971, -- Red Iron Horns
+    5029255627, -- Ink Head
+    6133036929, -- Low Pearl Headband
     5164293213, -- Barbed Chain
     20644021,   -- Xtreme Happy
+    4904654004, -- Shadowed Head
+    6133262085, -- Black Fuzzy Headband
+    6133255800, -- White Fuzzy Headband
+    6377689712, -- Cute Lil' Black Goth Bunny Hood
+    6275932619, -- Elf Ears w/ White Piercings
     14030577,   -- I Hate Noobs
+    8329686,    -- Sinister
+    7317765,    -- Slickfang
+    15470849,   -- Hut Hut Hike!
+    10907551,   -- Dizzy
+    7317773,    -- :-o
+    8329679,    -- Stitchface
+    20418658,   -- Err...
+    22877700,   -- Whistle
+    25166274,   -- Squiggle Mouth
     5197298886, -- Black Witch Hat
     6275661250, -- Black Overgrown Hair
     5164099769, -- Black Bat Wings
