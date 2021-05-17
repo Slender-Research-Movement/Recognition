@@ -14,8 +14,8 @@ game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
 local emo = {}
 emo.players = {}
 
-emo.items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flaggeditems.lua"))()
-emo.names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flaggednames.lua"))()
+emo.items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
+emo.names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
 
 emo.identify = function(player)
     local itemCount = 0
