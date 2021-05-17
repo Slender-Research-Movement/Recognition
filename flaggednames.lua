@@ -26,7 +26,8 @@ names = {
   "xn",
   "yo",
   "cath",
-  "pret"
+  "pret",
+  "ly"
 }
 
 return names
