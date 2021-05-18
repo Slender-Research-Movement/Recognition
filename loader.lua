@@ -93,4 +93,4 @@ end
 starterGui:SetCore("SendNotification", {Title = "There's a total of", Text = ""..tostring(totalEmos).." emos in this server", Icon = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid="..localPlr.UserId})
 --game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("There's a total of "..tostring(totalEmos).." emos in this server","All")
 wait(1.5)
-starterGui:SetCore("SendNotification", {Title = "Save log of Players?", Text = "You will find this in your workspace folder", Duration = 5, Callback = BindableFunc, Button1 = "Yes!", Button2 = "No"})
+starterGui:SetCore("SendNotification", {Title = "Save log of Players?", Text = "You will find this in your workspace folder", Duration = 20, Callback = BindableFunc, Button1 = "Yes!", Button2 = "No"})
