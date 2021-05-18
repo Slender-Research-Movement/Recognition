@@ -60,7 +60,6 @@ items = {
     11884330,   -- Nerd Glasses
     323476364,  -- Brown Scene Hair
     16412796,   -- Sk9r Boi
-    20573078,   -- Shaggy
     14404328,   -- Shutter Shades
     5644883846, -- Cool Boy Hair
     4932554634, -- Black Middle Hair
