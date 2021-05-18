@@ -15,6 +15,18 @@ items = {
     42070576,   -- Epic-Face
     1360068971, -- Red Iron Horns
     5029255627, -- Ink Head
+    6441016373, -- Goth Beanie
+    6361582090, -- Black Fluffy Short Bun Hair
+    6413288640, -- Black Flowy Pigtails
+    5945436918, -- Light Brown Ethereal Hairstyle
+    5314006793, -- Black Trendy Messy Buns
+    6239375692, -- Black Cutesy Pigtails
+    6682204447, -- Lazy Low Buns
+    4904032037, -- White Veil
+    4904107642, -- Black Veil
+    5644883846, -- Cool Boy Hair
+    5945411921, -- Cute White Winter Beanie
+    5945410067, -- Cute Black Winter Beanie
     6133036929, -- Low Pearl Headband
     5164293213, -- Barbed Chain
     20644021,   -- Xtreme Happy
