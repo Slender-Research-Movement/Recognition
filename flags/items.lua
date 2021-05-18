@@ -13,6 +13,9 @@ items = {
     139607673,  -- Korblox Left Leg
     134082579,  -- Headless Head
     4196166312, -- Censor Bar
+    5314006793, -- Black Trendy Messy Buns
+    7506141,    -- It's go time!
+    5621576440, -- Wicked Devil's Horns
     5037876398, -- Epic Mask
     130213380,  -- ROBLOX-Madness-Face
     42070576,   -- Epic-Face
