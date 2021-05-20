@@ -85,4 +85,6 @@ data.TotalPlayers = serverSize
 data.StringJson = resultado
 data.StringLogs = logs
 data.placeName = placeName
+-- ==== DEBUG --
+print(tostring(data))
 return data
