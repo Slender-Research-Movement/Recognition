@@ -83,5 +83,6 @@ data.TotalSlenders = totalEmos
 data.TotalFlags = totalFlags
 data.TotalPlayers = serverSize
 data.StringJson = resultado
+data.StringLogs = logs
 data.placeName = placeName
 return data
