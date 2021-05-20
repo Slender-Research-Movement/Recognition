@@ -51,7 +51,7 @@ end
 
     if isAPossibleEmo and itemCount >= 3 then
         totalDetect = totalDetect + 1
-			logs = logs.."\n Detected Slender | Player: "..player.Name.." Account Age: "player.AccountAge.." UserID: "..player.UserId.."Flags: "..tostring(itemCount)
+			logs = logs.."\n Detected Slender | Player: "..player.Name.." Account Age: "..player.AccountAge.." UserID: "..player.UserId.."Flags: "..tostring(itemCount)
         starterGui:SetCore("SendNotification", {Title = player.Name.." ", Text = " Has "..tostring(itemCount).." items.", Icon = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid="..player.UserId})
         emo.players[player.Name] = {
             ["Player"] = player,
