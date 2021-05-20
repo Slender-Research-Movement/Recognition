@@ -4,7 +4,7 @@ local facebook_marketplace = game:GetService("MarketplaceService")
 local starterGui = game:GetService("StarterGui")
 local resultado = "SlenderLogs = {"
 local logs = "== Operation Logs ==\n Operations are logged here."
-local serversize = #game.Players
+local serversize = #game.Players:GetPlayers()
 local totalFlags = 0
 local localPlr = players.LocalPlayer
 local totalDetect = 0
