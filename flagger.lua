@@ -14,15 +14,15 @@ local totalPlayers = 0
 wait(1)
 --game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("We use our current data to estimate Slenders in popular genre games such as, Murder Mistery Two, and Ragdoll Engine. With our scripts, we save the best estimates in files and examine the most common data among them. ","All")
 
-local emo = {}
-emo.players = {}
+local slender = {}
+slender.players = {}
 
-emo.items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
-emo.names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
+slender.items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
+slender.names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
 
-emo.identify = function(player)
+slender.identify = function(player)
     local itemCount = 0
-    local isAPossibleEmo = false
+    local isAPossibleSlender = false
     wait(.1)
     local success,info = pcall(players.GetCharacterAppearanceInfoAsync,players,player.UserId)
     if not success then
@@ -32,8 +32,8 @@ emo.identify = function(player)
     for _,tbl in next, info['assets'] do
     	local assetId = tbl.id
   
-    	if table.find(emo.items,assetId) then
-    	    isAPossibleEmo = true
+    	if table.find(slender.items,assetId) then
+    	    isAPossibleSlender = true
 	logs = logs.."\n Flagged 1 Item | "..player.Name
 		totalFlags = totalFlags + 1
     	    itemCount = itemCount + 1
@@ -41,18 +41,18 @@ emo.identify = function(player)
     end
     
  
-for playerIndex = 1, #emo.names do
-	name = emo.names[playerIndex]
+for playerIndex = 1, #slender.names do
+	name = slender.names[playerIndex]
   if player.Name:lower():find(name) then
-		isAPossibleEmo = true
+		isAPossibleSlender = true
 		logs = logs.."\n Flagged Name | Player: "..player.Name.." Name Flagged: "..name
 	end
 end
 
-    if isAPossibleEmo and itemCount >= 3 then
+    if isAPossibleSlender and itemCount >= 3 then
         totalDetect = totalDetect + 1
 			logs = logs.."\n Detected Slender | Player: "..player.Name.." Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount)
-        emo.players[player.Name] = {
+        slender.players[player.Name] = {
             ["Player"] = player,
             ["AccountAge"] = player.AccountAge,
 	    ["UserId"] = player.UserId,
@@ -65,13 +65,13 @@ local placeName = facebook_marketplace:GetProductInfo(game.PlaceId).Name
 local textNum = 0
 
 for _,plr in next, players:GetPlayers() do 
-    emo.identify(plr)
+    slender.identify(plr)
   totalPlayers = totalPlayers + 1
     wait(0.2)
 end
 
 
-for emoName,emoTbl in next, emo.players do
+for emoName,emoTbl in next, slender.players do
     resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"ItemsAmount\"] = "..emoTbl.EmoItemsAmount..",\n        [\"AccountAge\"] = "..emoTbl.AccountAge..",\n        [\"UserId\"] = "..emoTbl.UserId..",\n   }," 
 end
 logs = logs.."\n\n== Operation Logs END ==\n"
