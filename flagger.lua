@@ -3,7 +3,7 @@ local players = game:GetService("Players")
 local facebook_marketplace = game:GetService("MarketplaceService")
 local starterGui = game:GetService("StarterGui")
 local resultado = "SlenderLogs = {"
-local logs = "== Operation Logs ==\n Operations are logged here."
+local logs = "== Operation Logs ==\n Operations are logged here.\n\n"
 local serversize = #game.Players:GetPlayers()
 local totalFlags = 0
 local localPlr = players.LocalPlayer
@@ -51,7 +51,7 @@ end
 
     if isAPossibleEmo and itemCount >= 3 then
         totalDetect = totalDetect + 1
-			logs = logs.."\n Detected Slender | Player: "..player.Name.." Account Age: "..player.AccountAge.." UserID: "..player.UserId.."Flags: "..tostring(itemCount)
+			logs = logs.."\n Detected Slender | Player: "..player.Name.." Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount)
         emo.players[player.Name] = {
             ["Player"] = player,
             ["AccountAge"] = player.AccountAge,
@@ -74,6 +74,8 @@ end
 for emoName,emoTbl in next, emo.players do
     resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"ItemsAmount\"] = "..emoTbl.EmoItemsAmount..",\n        [\"AccountAge\"] = "..emoTbl.AccountAge..",\n        [\"UserId\"] = "..emoTbl.UserId..",\n   }," 
 end
+logs = logs.."\n\n== Operation Logs END ==\n"
+
 
 resultado = resultado.."\n}"
 local data = {}
