@@ -34,7 +34,8 @@ names = {
   "yo",
   "cath",
   "pret",
-  "ly"
+  "ly",
+  "Xx"
 }
 
 return names
