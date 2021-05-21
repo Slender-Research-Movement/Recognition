@@ -17,6 +17,7 @@ resultado = resultado .. "\n\n == END == \n\n"
 resultado = resultado .. "\n\n == OPERATION LOGS == \n\n"
 resultado = resultado .. result.StringLogs
 resultado = resultado .. "\n\n == END == \n\n"
+print(resultado)
 function nameFile()
 	if isfile("Slender Logs/Emo-Logs ("..result.PlaceName..") - "..result.PlaceName..".txt") then
         textNum = textNum+1
