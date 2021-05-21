@@ -26,7 +26,7 @@ slender.identify = function(player)
     wait(.1)
     local success,info = pcall(players.GetCharacterAppearanceInfoAsync,players,player.UserId)
     if not success then
-       logs = logs.."\n Cannot get appearence info of "..player.Name.." || "tostring(info)
+       logs = logs.."\n | !! | Cannot get appearence info of "..player.Name.." || "tostring(info).." | !! |"
         return
     end
     for _,tbl in next, info['assets'] do
@@ -34,7 +34,10 @@ slender.identify = function(player)
   
     	if table.find(slender.items,assetId) then
     	    isAPossibleSlender = true
-	logs = logs.."\n Flagged 1 Item | "..player.Name
+			
+	local Asset = game:GetService("MarketplaceService"):GetProductInfo(assetId) --[[Get's Product Information Of The Sound--]]
+	
+	logs = logs.."\n |🚩| Flagged 1 Item | "..player.Name.." | Asset ID: "..assetId.."Asset: "..Asset.Name
 		totalFlags = totalFlags + 1
     	    itemCount = itemCount + 1
     	end
@@ -45,7 +48,7 @@ for playerIndex = 1, #slender.names do
 	name = slender.names[playerIndex]
   if player.Name:lower():find(name) then
 		isAPossibleSlender = true
-		logs = logs.."\n Flagged Name | Player: "..player.Name.." Name Flagged: "..name
+		logs = logs.."\n |🚩| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
 	end
 end
 
@@ -77,6 +80,29 @@ end
 logs = logs.."\n\n== Operation Logs END ==\n"
 
 
+function recursiveToString(object)
+    if typeof(object) == "table" then
+        local str = "{\n"
+        for i,v in pairs(object) do
+            if typeof(i) == "string" then
+                str = str .. i .. " = "
+            else
+                str = str .. "[" .. tostring(i) .. "] = "
+            end
+
+            str = str .. tostring(v) .. ",\n"
+        end
+        str = str .. "}"
+        return str
+    else
+        return tostring(object)
+    end
+end
+
+function recursivePrint(object)
+    print(recursiveToString(object))
+end
+
 resultado = resultado.."\n}"
 local data = {}
 data.SlenderTable = emoTbl
@@ -87,6 +113,7 @@ data.StringJson = resultado
 data.StringLogs = logs
 data.placeName = placeName
 -- ==== DEBUG --
-print(tostring(data))
 print(logs)
+print("\n\n== Collected Data START ==\n")
+recursivePrint(data)
 return data
