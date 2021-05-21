@@ -1,16 +1,17 @@
 local starterGui = game:GetService("StarterGui")
 
 local localPlr = game.Players.LocalPlayer
+starterGui:SetCore("SendNotification", {Title = "Loading flagger.lua", Text = "Please wait a few seconds", Icon = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid="..localPlr.UserId})
 
-result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flagger.lua"))()
+local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flagger.lua"))()
 local resultado = "== DATA PRINTED FROM 'flagger.lua' ==\n"
 resultado = resultado .. "Place Name: ".. result.PlaceName .." \n"
-resultado = resultado .. "Total Players: ".. result.TotalPlayers .. " \n"
-resultado = resultado .. "Total Slenders: ".. result.TotalSlenders .. " \n"
-resultado = resultado .. "Total Flags: ".. result.TotalFlags .." \n"
+resultado = resultado .. "Total Players: ".. tostring(result.TotalPlayers) .. " \n"
+resultado = resultado .. "Total Slenders: "..  tostring(result.TotalSlenders) .. " \n"
+resultado = resultado .. "Total Flags: "..  tostring(result.TotalFlags) .." \n"
 local averagef = result.TotalFlags / result.TotalSlenders
-resultado = resultado .. "Average Flags xSlender: ".. averagef .." \n"
-resultado = resultado .. "Slender/Players: ".. result.TotalSlenders .."/".. result.TotalPlayers.." \n"
+resultado = resultado .. "Average Flags xSlender: "..  tostring(averagef) .." \n"
+resultado = resultado .. "Slender/Players: "..  tostring(result.TotalSlenders) .."/"..  tostring(result.TotalPlayers).." \n"
 resultado = resultado .. "\n\n == DETECTED SLENDERS == \n\n"
 resultado = resultado .. result.StringJson
 resultado = resultado .. "\n\n == END == \n\n"
