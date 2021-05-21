@@ -1,6 +1,6 @@
 local starterGui = game:GetService("StarterGui")
 
-local localPlr = players.LocalPlayer
+local localPlr = game.Players.LocalPlayer
 
 result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flagger.lua"))()
 local resultado = "== DATA PRINTED FROM 'flagger.lua' ==\n"
