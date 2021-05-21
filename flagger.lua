@@ -26,7 +26,7 @@ slender.identify = function(player)
     wait(.1)
     local success,info = pcall(players.GetCharacterAppearanceInfoAsync,players,player.UserId)
     if not success then
-       logs = logs.."\n | !! | Cannot get appearence info of "..player.Name.." || "tostring(info).." | !! |"
+       logs = logs.."\n | !! | Cannot get appearence info of "..player.Name.." || "..tostring(info).." | !! |"
         return
     end
     for _,tbl in next, info['assets'] do
