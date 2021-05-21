@@ -6,7 +6,8 @@ local resultado = "SlenderLogs = {"
 local logs = "\n Operations are logged here.\n\n"
 
 local serversize = 0
-for i, player in pairs(players:GetPlayers()) do
+local _players = game:GetService("Players")
+for i, player in pairs(_players:GetPlayers()) do
     serversize = serversize + 1
 end
 local totalFlags = 0
@@ -108,7 +109,7 @@ local data = {}
 data.SlenderTable = emoTbl
 data.TotalSlenders = totalDetect
 data.TotalFlags = totalFlags
-data.TotalPlayers = serverSize
+data.TotalPlayers = serversize
 data.StringJson = resultado
 data.StringLogs = logs
 data.placeName = placeName
