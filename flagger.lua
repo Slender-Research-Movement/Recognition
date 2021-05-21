@@ -44,7 +44,7 @@ slender.identify = function(player)
 		name = slender.names[playerIndex]
 		if player.Name:lower():find(name) then
 			isAPossibleSlender = true
-			logs = logs.."\n   |🚩| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
+			logs = logs.."\n    |🏁| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
 		end
 	end
 
@@ -71,7 +71,7 @@ end
 
 
 for emoName,emoTbl in next, slender.players do
-	resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"ItemsAmount\"] = "..emoTbl.EmoItemsAmount..",\n        [\"AccountAge\"] = "..emoTbl.AccountAge..",\n        [\"UserId\"] = "..emoTbl.UserId..",\n   }," 
+	resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"Flags\"] = "..emoTbl.EmoItemsAmount..",\n        [\"AccountAge\"] = "..emoTbl.AccountAge..",\n        [\"UserId\"] = "..emoTbl.UserId..",\n   }," 
 end
 logs = logs.."\n\n== Operation Logs END ==\n"
 
@@ -102,7 +102,7 @@ end
 resultado = resultado.."\n}"
 local data = {}
 data.SlenderTable = emoTbl
-data.TotalSlenders = totalEmos
+data.TotalSlenders = totalDetect
 data.TotalFlags = totalFlags
 data.TotalPlayers = serverSize
 data.StringJson = resultado
