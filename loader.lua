@@ -4,13 +4,13 @@ local localPlr = game.Players.LocalPlayer
 
 result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flagger.lua"))()
 local resultado = "== DATA PRINTED FROM 'flagger.lua' ==\n"
-resultado = resultado .. "Place Name: ".. result.PlaceName.." \n"
-resultado = resultado .. "Total Players: ".. result.TotalPlayers.." \n"
-resultado = resultado .. "Total Slenders: ".. result.TotalSlenders.." \n"
-resultado = resultado .. "Total Flags: ".. result.TotalFlags.." \n"
+resultado = resultado .. "Place Name: ".. result.PlaceName .." \n"
+resultado = resultado .. "Total Players: ".. result.TotalPlayers .. " \n"
+resultado = resultado .. "Total Slenders: ".. result.TotalSlenders .. " \n"
+resultado = resultado .. "Total Flags: ".. result.TotalFlags .." \n"
 local averagef = result.TotalFlags / result.TotalSlenders
-resultado = resultado .. "Average Flags xSlender: ".. averagef.." \n"
-resultado = resultado .. "Slender/Players: ".. result.TotalSlenders.."/"..result.TotalPlayers.." \n"
+resultado = resultado .. "Average Flags xSlender: ".. averagef .." \n"
+resultado = resultado .. "Slender/Players: ".. result.TotalSlenders .."/".. result.TotalPlayers.." \n"
 resultado = resultado .. "\n\n == DETECTED SLENDERS == \n\n"
 resultado = resultado .. result.StringJson
 resultado = resultado .. "\n\n == END == \n\n"
