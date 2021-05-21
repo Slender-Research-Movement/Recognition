@@ -50,7 +50,7 @@ slender.identify = function(player)
 
 	if isAPossibleSlender and itemCount >= 3 then
 		totalDetect = totalDetect + 1
-		logs = logs.."\n Detected Slender | Player: "..player.Name.." Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount)
+		logs = logs.."\n |💽| Detected Slender | Player: "..player.Name.." Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount)
 		slender.players[player.Name] = {
 			["Player"] = player,
 			["AccountAge"] = player.AccountAge,
@@ -111,7 +111,7 @@ data.placeName = placeName
 -- ==== DEBUG --
 print(logs)
 print("\n\n== Collected Data START ==\n")
-recursivePrint(data)
+--recursivePrint(data)
 print("\n\n== Collected Data END ==\n")
 
 return data
