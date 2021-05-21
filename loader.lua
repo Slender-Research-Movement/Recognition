@@ -18,12 +18,12 @@ resultado = resultado .. result.StringLogs
 resultado = resultado .. "\n\n == END == \n\n"
 print(resultado)
 function nameFile()
-	if isfile("Slender Logs/Emo-Logs ("..result.PlaceName..") - "..result.PlaceName..".txt") then
+	if isfile("Slender Logs/Emo-Logs ("..result.placeName..") - "..textNum..".txt") then
         textNum = textNum+1
 		nameFile()
 	else
 	    if isfolder("Slender Logs") then
-	        		writefile("Slender Logs/Emo-Logs ("..result.PlaceName..") - "..textNum..".txt", resultado)
+	        		writefile("Slender Logs/Emo-Logs ("..result.placeName..") - "..textNum..".txt", resultado)
 	      else
 	          	    local folder = makefolder("Slender Logs")
             namefile()
