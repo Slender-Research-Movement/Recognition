@@ -9,8 +9,6 @@ resultado = resultado .. "Place Name: ".. result.placeName .." \n"
 resultado = resultado .. "Total Players: ".. tostring(result.TotalPlayers) .. " \n"
 resultado = resultado .. "Total Slenders: "..  tostring(result.TotalSlenders) .. " \n"
 resultado = resultado .. "Total Flags: "..  tostring(result.TotalFlags) .." \n"
-local averagef = result.TotalFlags / result.TotalSlenders
-resultado = resultado .. "Average Flags xSlender: "..  tostring(averagef) .." \n"
 resultado = resultado .. "Slender/Players: "..  tostring(result.TotalSlenders) .."/"..  tostring(result.TotalPlayers).." \n"
 resultado = resultado .. "\n\n == DETECTED SLENDERS == \n\n"
 resultado = resultado .. result.StringJson
