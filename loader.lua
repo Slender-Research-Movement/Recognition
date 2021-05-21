@@ -5,7 +5,7 @@ starterGui:SetCore("SendNotification", {Title = "Loading flagger.lua", Text = "P
 
 local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flagger.lua"))()
 local resultado = "== DATA PRINTED FROM 'flagger.lua' ==\n"
-resultado = resultado .. "Place Name: ".. result.PlaceName .." \n"
+resultado = resultado .. "Place Name: ".. result.placeName .." \n"
 resultado = resultado .. "Total Players: ".. tostring(result.TotalPlayers) .. " \n"
 resultado = resultado .. "Total Slenders: "..  tostring(result.TotalSlenders) .. " \n"
 resultado = resultado .. "Total Flags: "..  tostring(result.TotalFlags) .." \n"
