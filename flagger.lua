@@ -33,7 +33,7 @@ slender.identify = function(player)
 
 			local Asset = facebook_marketplace:GetProductInfo(assetId) --[[Get's Product Information Of The Sound--]]
 
-			logs = logs.."\n |🚩| Flagged 1 Item | "..player.Name.." | Asset ID: "..assetId.."Asset: "..Asset.Name
+			logs = logs.."\n   |🚩| Flagged 1 Item | "..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name
 			totalFlags = totalFlags + 1
 			itemCount = itemCount + 1
 		end
@@ -44,7 +44,7 @@ slender.identify = function(player)
 		name = slender.names[playerIndex]
 		if player.Name:lower():find(name) then
 			isAPossibleSlender = true
-			logs = logs.."\n |🚩| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
+			logs = logs.."\n   |🚩| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
 		end
 	end
 
