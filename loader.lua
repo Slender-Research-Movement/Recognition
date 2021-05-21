@@ -1,7 +1,67 @@
+--[[
+                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                     ---                                                                                                             ----  --                                           
+                                   =@@@@@=-              -==-                                                                                    -=-=@@@@@@@@=======-                                   
+                                 -@@@@@@@@@=-            --=-                                                                                    ---=@@@@@@@@=======-                                   
+                                 =@@@@@@@@@@@@==-        -==-                                                                                    -=-=@@@@@@@@@@@@@@@=                                   
+                                  -=@@@@@@@@@@@@@=-      -==-                                                                                    =@@@@@@@@@@@@@@@@@@=                                   
+                                    -=@@@@@@@@@@@@@@=-   -==-                                                                                   -@@@@@@@@@@@=                                           
+                                       -@@@@@@@@@@@@@@=-  -=-                                                                                 -=@@@@@@@@@@@=-  ------                                   
+                                     -==@@@@@@@@@@@@@@@@@@=-                                                                                 =@@@@@@@@@@@@===--===@@-                                   
+                                   -=@@@@@@==-=@@@@@@@@@@@@@=-                                                                             -=@@@@@@@@@@====---======-                                   
+                                   =@@@@@@@@@==-=@@@@@@@@@@@@@=                                                                          -@@@@@@@@@@@@==-=---=======-                                   
+                                 =@@@@@@@@@@@@@@=-==@@@@@@@@@@=                                                                         -@@@@@@@@@@@=====-==@@@@@@@@-                                   
+                                  -=@@@@@@@@@@@@@@==-==@@@@@@@=                                                                        =@@@@@@@@@@=-----==@@@@@@@@@@-                                   
+                                   -=@@@@@@@@@@@@@@@@=- -=@@@@=                                                                        =@@@@@@@@@=----=@@@@@@@@@@@=@-                                   
+                                   --@@@@@@@@@@@@@@@@@@=- -=@@=                                                                        =@@@@@@@-----=@@@@@@@@@@@@@@@-                                   
+                                 -=---=@@@@@@@@@@@@@@@@@=    =-                                                                        =@@@@@=-  -=@@@@@@@@@@@@@@@@@=                                   
+                                       -=@@@@@@@@@@@@@@@-                                                                              =@@@=-  -=@@@@@@@@@@@@@@@@@@@=                                   
+                                       -======@@@@======-                                                                              =@=-  -=@@@@@@@@@@@@@@@@@@@@@=                                   
+                                       -================-                                                                                     -@@@@@@@@@@@@@@-------                                    
+                                       -================-                                                                              -----=-===@@@@@@@@@@-                                            
+                                         -==============-                                                                            -==============-----==                                             
+                                             -------                                                                               -=====-----==-                                                       
+                                                                                                                                   -=====-----==-                                                       
+                                                                                                                                   -============-                                                       
+                                                                                                                                   -============-                                                       
+                                                                                                                                   -=======------                                                       
+                                                                                                                               -=========--                                                             
+                                                                                                                             -=========-                                                                
+                                                                                                                             -=======-                                                                  
+                                                                                                                               -=====                                                                   
+                                                                                                                               -=====                                                                   
+                                                                                                                               -=====                                                                   
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                            -==---           ---  ---=--   --==---  ----------==--------    ---==--------- ---------   ----                                                             
+                                           -=@@@=------------==----=@@=-- -=@@@@=----==@=====@@@@@@@@@@=-- --=@@@@==-===@=-========-- -=@=-----------                                                   
+                                           -=@@@=------------------=@@=-- -==@@@======@@@@==@@@@@@@@@@@@@=--==@@@@=---====-========-- -=@=-----------                                                   
+                                           -=@@@=-----------=====--==@==--==@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@========--=======--  =@=-----------                                                   
+                                           -=@@=====-----==@@@@@@@==@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@==========---==@=--  -   --                                                    
+                                           -=@@==@@@@====@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=======@@@@===========-                                                   
+                                           -=@@==@@@@===@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=                                                   
+                                           -=@@===@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=--====                                                   
+                                           -=@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@===========@@@@@@@@@@@@@@@==@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@==--====                                                   
+                                           -=@@@@@@@@@@@@@@@@@@@@@@@@@@@@=----==@@@===========@@@@@@@@@@@@@=----==@@@@==@@@@@@@@@@@@@@@@@@@@@@@======                                                   
+                                           -=@@@@@@@@@@@@@@@@@@@@@@@@@@@=-   -==@@@===============@@@@@=====----==@@@=---=@@@@@@@@@@@@@@@@@@@@@@@@@=-                                                   
+                                           -=@@@@@@@@@@@@==@@@@@@@@@@@==-    --=@@@===============@@@@@=====----==@@@=---=@@@@@@@@@@@@@@@@@@@@@@@@@@=                                                   
+                                            -=@@@@@====@@==@@=====@@@=-      --=@@@===============@@@@@=====----==@@@=----====@@@@@@@@=@@@@@@@@@@@@@=                                                   
+                                            -@@===@@@==@@==@@@===@@@@=--     -=@@@@====@@@========@@@@@=====----=@@@@=--------=@@@@====@@@=@@@@@@@@@=                                                   
+                                             ----------------------=--        --==-----------------===------    ------       -----     -=----==------                                                   
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+--]]
+
 local starterGui = game:GetService("StarterGui")
 
 local localPlr = game.Players.LocalPlayer
-starterGui:SetCore("SendNotification", {Title = "Loading flagger.lua", Text = "Please wait a few seconds", Icon = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid="..localPlr.UserId})
+starterGui:SetCore("SendNotification", {Title = "Loading flagger.lua", Text = "Please wait a few seconds", Icon = "rbxassetid://6846191221"})
 
 local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flagger.lua"))()
 local resultado = "== DATA PRINTED FROM 'flagger.lua' ==\n"
@@ -32,6 +92,8 @@ function nameFile()
 	end
 end
 
+
+--[[--]]
 local BindableFunc = Instance.new("BindableFunction")
 BindableFunc.OnInvoke = function(args)
     if args == "Yes!" then
@@ -39,7 +101,7 @@ BindableFunc.OnInvoke = function(args)
 	end
 end
 
-starterGui:SetCore("SendNotification", {Title = "There's a total of", Text = ""..result.TotalSlenders.." emos in this server", Icon = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid="..localPlr.UserId})
+starterGui:SetCore("SendNotification", {Title = "There's a total of", Text = ""..result.TotalSlenders.." emos in this server", Icon = "rbxassetid://6846191221"})
 --game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("There's a total of "..tostring(totalEmos).." emos in this server","All")
 wait(1.5)
-starterGui:SetCore("SendNotification", {Title = "Save log of Players?", Text = "You will find this in your workspace folder", Duration = 20, Callback = BindableFunc, Button1 = "Yes!", Button2 = "No"})
+starterGui:SetCore("SendNotification", {Title = "Save log of Players?", Text = "You will find this in your workspace folder",Icon = "rbxassetid://6846191221" ,Duration = 20, Callback = BindableFunc, Button1 = "Yes!", Button2 = "No"})
