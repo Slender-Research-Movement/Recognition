@@ -16,6 +16,7 @@ local totalPlayers = 0
 local slender = {}
 slender.players = {}
 
+slender.values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
 slender.items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
 slender.names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
 logs = logs.."\n ======= |💈| Flag Database Prepared | "..os.date("%X",time)
@@ -37,9 +38,9 @@ slender.identify = function(player)
 
 			local Asset = facebook_marketplace:GetProductInfo(assetId) --[[Get's Product Information Of The Sound--]]
 
-			logs = logs.."\n   |🚩| Flagged Item | "..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name
-			totalFlags = totalFlags + 1
-			itemCount = itemCount + 1
+				logs = logs.."\n   |🚩 +"..slender.values.FLAG_ITEM.."| Flagged Item | "..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name
+			totalFlags = totalFlags + slender.values.FLAG_ITEM
+			itemCount = itemCount + slender.values.FLAG_ITEM
 		end
 	end
 
@@ -48,9 +49,9 @@ slender.identify = function(player)
 		name = slender.names[playerIndex]
 		if player.Name:lower():find(name) then
 			isAPossibleSlender = true
-			logs = logs.."\n    |🏁| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
-			totalFlags = totalFlags + .5
-			itemCount = itemCount + .5
+			logs = logs.."\n    |🏁 +"..slender.values.FLAG_NAME.."| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
+			totalFlags = totalFlags + slender.values.FLAG_NAME
+			itemCount = itemCount + slender.values.FLAG_NAME
 		end
 	end
 
