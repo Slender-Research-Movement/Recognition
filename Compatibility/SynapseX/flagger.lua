@@ -18,7 +18,7 @@ slender.players = {}
 
 slender.items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
 slender.names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
-logs = logs.."\n |💈| Flag Database Prepared | "..os.date("%X",time)
+logs = logs.."\n ======= |💈| Flag Database Prepared | "..os.date("%X",time)
 
 slender.identify = function(player)
 	local itemCount = 0
@@ -79,7 +79,7 @@ end
 for emoName,slenderList in next, slender.players do
 	resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"Flags\"] = "..slenderList.Flags..",\n        [\"AccountAge\"] = "..slenderList.AccountAge..",\n        [\"UserId\"] = "..slenderList.UserId..",\n   }," 
 end
-logs = logs.."\n\n== Operation Logs END ==\n"
+logs = logs.."\n\n======= | 🎌 END OF LOGS 🎌 | =======\n"
 
 
 function recursiveToString(object)
