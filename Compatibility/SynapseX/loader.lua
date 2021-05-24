@@ -103,6 +103,7 @@ BindableFunc.OnInvoke = function(args)
 		nameFile()
 	end
 end
+starterGui:SetCore("ChatWindowSize",{windowSize = UDim2.new(0.5,0,1,0)})
 starterGui:SetCore("ChatMakeSystemMessage",{Text = result.StringLogs, Font = Enum.Font.Ubuntu})
 starterGui:SetCore("SendNotification", {Title = "There's a total of", Text = ""..result.TotalSlenders.." Slenders with a total of "..result.TotalFlags.." flags in this server", Icon = "rbxassetid://6846191221"})
 --game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("There's a total of "..tostring(totalEmos).." emos in this server","All")
