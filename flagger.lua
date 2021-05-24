@@ -48,6 +48,8 @@ slender.identify = function(player)
 		if player.Name:lower():find(name) then
 			isAPossibleSlender = true
 			logs = logs.."\n    |🏁| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
+			totalFlags = totalFlags + .5
+			itemCount = itemCount + .5
 		end
 	end
 
