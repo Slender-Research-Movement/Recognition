@@ -58,6 +58,9 @@
                                                                                                                                                                                                         
 --]]
 
+--[[
+'loader.lua' was made specifically for exploits. Synapse X in particular. This uses a different version of 'flagger.lua' as to be runned from exploit bytecode.
+--]]
 local starterGui = game:GetService("StarterGui")
 
 local localPlr = game.Players.LocalPlayer
@@ -100,7 +103,7 @@ BindableFunc.OnInvoke = function(args)
 		nameFile()
 	end
 end
-
+starterGui:SetCore("ChatMakeSystemMessage",{Text = result.StringLogs, Font = Enum.Font.Ubuntu})
 starterGui:SetCore("SendNotification", {Title = "There's a total of", Text = ""..result.TotalSlenders.." Slenders with a total of "..result.TotalFlags.." flags in this server", Icon = "rbxassetid://6846191221"})
 --game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("There's a total of "..tostring(totalEmos).." emos in this server","All")
 wait(1.5)
