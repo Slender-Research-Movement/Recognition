@@ -27,7 +27,7 @@ slender.identify = function(player)
 	wait(.1)
 	local success,info = pcall(players.GetCharacterAppearanceInfoAsync,players,player.UserId)
 	if not success then
-		logs = logs.."\n | !! | Cannot get appearence info of "..player.Name.." || "..tostring(info).." | !! |"
+		logs = logs.."\n |🛑| Cannot get appearence info of "..player.Name.." || "..tostring(info).." |🛑|"
 		return
 	end
 	for _,tbl in next, info['assets'] do
@@ -38,7 +38,7 @@ slender.identify = function(player)
 
 			local Asset = facebook_marketplace:GetProductInfo(assetId) --[[Get's Product Information Of The Sound--]]
 
-			logs = logs.."\n   |🚩| Flagged 1 Item | "..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name
+			logs = logs.."\n   |🚩| Flagged Item | "..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name
 			totalFlags = totalFlags + 1
 			itemCount = itemCount + 1
 		end
@@ -60,7 +60,7 @@ slender.identify = function(player)
 			["Player"] = player,
 			["AccountAge"] = player.AccountAge,
 			["UserId"] = player.UserId,
-			["EmoItemsAmount"] = tostring(itemCount)
+			["Flags"] = tostring(itemCount)
 		}
 	end
 end
@@ -75,8 +75,8 @@ for _,plr in next, players:GetPlayers() do
 end
 
 
-for emoName,emoTbl in next, slender.players do
-	resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"Flags\"] = "..emoTbl.EmoItemsAmount..",\n        [\"AccountAge\"] = "..emoTbl.AccountAge..",\n        [\"UserId\"] = "..emoTbl.UserId..",\n   }," 
+for emoName,slenderList in next, slender.players do
+	resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"Flags\"] = "..slenderList.Flags..",\n        [\"AccountAge\"] = "..slenderList.AccountAge..",\n        [\"UserId\"] = "..slenderList.UserId..",\n   }," 
 end
 logs = logs.."\n\n== Operation Logs END ==\n"
 
@@ -106,17 +106,12 @@ end
 
 resultado = resultado.."\n}"
 local data = {}
-data.SlenderTable = emoTbl
+data.SlenderTable = slenderList
 data.TotalSlenders = totalDetect
 data.TotalFlags = totalFlags
 data.TotalPlayers = serversize
 data.StringJson = resultado
 data.StringLogs = logs
 data.placeName = placeName
--- ==== DEBUG --
-print(logs)
-print("\n\n== Collected Data START ==\n")
---recursivePrint(data)
-print("\n\n== Collected Data END ==\n")
 
 return data
