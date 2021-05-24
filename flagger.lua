@@ -19,7 +19,7 @@ slender.players = {}
 
 slender.items = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))
 slender.names = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))
-logs = logs.."\n |💈| Flag Database Prepared | "..os.date("%X",time)
+logs = logs.."\n|💈| Flag Database Prepared | "..os.date("%X",time)
 
 slender.identify = function(player)
 	local itemCount = 0
@@ -38,7 +38,7 @@ slender.identify = function(player)
 
 			local Asset = facebook_marketplace:GetProductInfo(assetId) --[[Get's Product Information Of The Sound--]]
 
-			logs = logs.."\n   |🚩| Flagged Item | "..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name
+			logs = logs.."\n   |🚩 +1| Flagged Item | "..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name
 			totalFlags = totalFlags + 1
 			itemCount = itemCount + 1
 		end
@@ -49,7 +49,7 @@ slender.identify = function(player)
 		name = slender.names[playerIndex]
 		if player.Name:lower():find(name) then
 			isAPossibleSlender = true
-			logs = logs.."\n    |🏁| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
+			logs = logs.."\n    |🏁 +.5| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
 			totalFlags = totalFlags + .5
 			itemCount = itemCount + .5
 		end
@@ -57,7 +57,7 @@ slender.identify = function(player)
 
 	if isAPossibleSlender and itemCount >= 3 then
 		totalDetect = totalDetect + 1
-		logs = logs.."\n |💽| Detected Slender | Player: "..player.Name.." Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount)
+		logs = logs.."\n |💽 "..tostring(itemCount).."| Detected Slender | Player: "..player.Name.." Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount)
 		slender.players[player.Name] = {
 			["Player"] = player,
 			["AccountAge"] = player.AccountAge,
