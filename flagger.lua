@@ -1,5 +1,6 @@
 local players = game:GetService("Players")
-
+local time = os.time()
+local http = game:GetService("HttpService")
 local facebook_marketplace = game:GetService("MarketplaceService")
 local starterGui = game:GetService("StarterGui")
 local resultado = "SlenderLogs = {"
@@ -16,8 +17,9 @@ local totalPlayers = 0
 local slender = {}
 slender.players = {}
 
-slender.items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
-slender.names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
+slender.items = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))
+slender.names = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))
+logs = logs.."\n |💈| Flag Database Prepared | "..os.date("%X",time)
 
 slender.identify = function(player)
 	local itemCount = 0
@@ -25,7 +27,7 @@ slender.identify = function(player)
 	wait(.1)
 	local success,info = pcall(players.GetCharacterAppearanceInfoAsync,players,player.UserId)
 	if not success then
-		logs = logs.."\n |🛑| Cannot get appearence info of "..player.Name.." || "..tostring(info).." |🛑|"
+		logs = logs.."\n |🛑| Cannot get appearence info of "..player.Name.." || "..tostring(info).." |🛑| "..os.date("%X",time)
 		return
 	end
 	for _,tbl in next, info['assets'] do
