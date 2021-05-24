@@ -5,11 +5,9 @@ local starterGui = game:GetService("StarterGui")
 local resultado = "SlenderLogs = {"
 local logs = "\n Operations are logged here.\n\n"
 
-local serversize = 0
 local _players = game:GetService("Players")
-for i, player in pairs(_players:GetPlayers()) do
-    serversize = serversize + 1
-end
+local serversize = #_players:GetPlayers()
+
 local totalFlags = 0
 local localPlr = players.LocalPlayer
 local totalDetect = 0
