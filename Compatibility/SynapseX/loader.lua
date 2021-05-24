@@ -65,6 +65,7 @@ local starterGui = game:GetService("StarterGui")
 
 local localPlr = game.Players.LocalPlayer
 starterGui:SetCore("SendNotification", {Title = "Loading flagger.lua", Text = "Please wait a few seconds", Icon = "rbxassetid://6846191221"})
+starterGui:SetCore("ChatMakeSystemMessage",{Text = "== Loading module ==", Font = Enum.Font.Ubuntu})
 
 local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/Compatibility/SynapseX/flagger.lua"))()
 local resultado = "== DATA PRINTED FROM 'SynapseX/flagger.lua' ==\n"
