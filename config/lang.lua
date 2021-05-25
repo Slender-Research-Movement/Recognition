@@ -14,33 +14,33 @@ Importance = 2 --@#> [INT] Describes how many spaces after a '\n'
 lang.READY = ""
 
 lang.SYS_PRINT = {
-Header = "💈"
-Title = nil
-Importance = 0
+Header = "💈",
+Title = nil,
+Importance = 0,
 }
 
 lang.APPEARENCE_ERROR = {
-Header = "🛑"
-Title = "Cannot get appearence info"
-Importance = 0
+Header = "🛑",
+Title = "Cannot get appearence info",
+Importance = 0,
 }
 
 lang.FLAGGED_ITEM = {
-Header = "🚩"
-Title = "Flagged Item"
-Importance = 3
+Header = "🚩",
+Title = "Flagged Item",
+Importance = 3,
 }
 
 lang.FLAGGED_NAME = {
-Header = "🏁"
-Title = "Flagged Name"
-Importance = 4
+Header = "🏁",
+Title = "Flagged Name",
+Importance = 4,
 }
 
 lang.DETECTED = {
-Header = "💽"
-Title = "Detected Slender"
-Importance = 0
+Header = "💽",
+Title = "Detected Slender",
+Importance = 0,
 }
 
 return lang
