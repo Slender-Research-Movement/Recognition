@@ -49,7 +49,10 @@ slender.names = names
 	
 	slender.writeLogs("💈","Values Set (Items, Names, Values)",os.date("%X",time),0)	
 end
-
+values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
+items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
+names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
+setValues(items,names,values)
 	slender.writeLogs("💈","Flag Database Prepared",os.date("%X",time),0)	
 
 
