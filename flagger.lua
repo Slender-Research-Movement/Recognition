@@ -20,14 +20,11 @@ local slender = {}
 slender.players = {}
 --#@> ========================================
 --#@> Uses a different method to GET when using exploits
---slender.values = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))
---slender.items = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))
---slender.names = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))
+slender.values = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))
+slender.items = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))
+slender.names = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))
 --#@> ========================================
 
-slender.values = nil
-slender.items = nil
-slender.names = nil
 
 slender.writeLogs = function(header,title,inner,importance)
 	logs = logs.."\n"
@@ -41,6 +38,8 @@ end
 
 	
 	end
+
+
 
 function setValues(items,names,values)
 	
