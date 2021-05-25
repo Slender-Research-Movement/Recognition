@@ -19,8 +19,10 @@ local ready = 1
 local slender = {}
 slender.players = {}
 --#@> ========================================
---#@> Uses a different method to GET when using exploits
+--#@> CONFIGURATION
 slender.values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
+slender.lang = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/lang.lua"))()
+--#@> FLAGS
 slender.items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
 slender.names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
 --#@> ========================================
@@ -47,7 +49,7 @@ slender.values = values
 slender.items = items
 slender.names = names
 	
-	slender.writeLogs("💈","Values Set (Items, Names, Values)",os.date("%X",time),0)	
+	slender.writeLogs(slender.lang.SYS_PRINT.Header,"Values Set (Items, Names, Values)",os.date("%X",time),0)	
 end
 --#@> DEBUG
 --values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
@@ -56,7 +58,7 @@ end
 --setValues(items,names,values)
 --#@> ======
 
-	slender.writeLogs("💈","Flag Database Prepared",os.date("%X",time),0)	
+	slender.writeLogs(slender.lang.SYS_PRINT.Header,"Flag Database Prepared",os.date("%X",time),0)	
 
 
 slender.identify = function(player)
@@ -66,7 +68,7 @@ slender.identify = function(player)
 	wait(.1)
 	local success,info = pcall(players.GetCharacterAppearanceInfoAsync,players,player.UserId)
 	if not success then
-		slender.writeLogs("🛑","Cannot get appearence info","Player: "..player.Name.." Error: "..tostring(info),0)	
+		slender.writeLogs(slender.lang.APPEARENCE_ERROR.Header,slender.lang.APPEARENCE_ERROR.Title,"Player: "..player.Name.." Error: "..tostring(info),0)	
 		return
 	end
 	for _,tbl in next, info['assets'] do
@@ -77,7 +79,7 @@ slender.identify = function(player)
 
 			local Asset = facebook_marketplace:GetProductInfo(assetId) --[[Get's Product Information Of The Sound--]]
 			
-		        slender.writeLogs("🚩 +"..slender.values.FLAG_ITEM,"Flagged Item","Player: @"..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name,3)
+		        slender.writeLogs(slender.lang.FLAGGED_ITEM.Header.." +"..slender.values.FLAG_ITEM,slender.lang.FLAGGED_ITEM.Title,"Player: @"..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name,slender.lang.FLAGGED_ITEM.Importance)
 			totalFlags = totalFlags + slender.values.FLAG_ITEM
 			itemCount = itemCount + slender.values.FLAG_ITEM
 		end
@@ -88,7 +90,7 @@ slender.identify = function(player)
 		name = slender.names[playerIndex]
 		if player.Name:lower():find(name) then
 			isAPossibleSlender = true
-					        slender.writeLogs("🏁 +"..slender.values.FLAG_NAME,"Flagged Name","Player: @"..player.Name.." | Name Part: "..name,4)
+					        slender.writeLogs(slender.lang.FLAGGED_NAME.Header.." +"..slender.values.FLAG_NAME,slender.lang.FLAGGED_NAME.Title,"Player: @"..player.Name.." | Name Part: "..name,slender.lang.FLAGGED_NAME.Importance)
                         totalFlags = totalFlags + slender.values.FLAG_NAME
 			itemCount = itemCount + slender.values.FLAG_NAME
 		end
@@ -96,7 +98,7 @@ slender.identify = function(player)
 
 	if isAPossibleSlender and itemCount >= 3 then
 		totalDetect = totalDetect + 1
-		slender.writeLogs("💽 "..tostring(itemCount),"Detected Slender","Player: @"..player.Name.." | Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount),4)
+		slender.writeLogs(slender.lang.DETECTED.Header.." "..tostring(itemCount),slender.lang.DETECTED.Title,"Player: @"..player.Name.." | Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount),slender.lang.DETECTED.Importance)
 		slender.players[player.Name] = {
 			["Player"] = player,
 			["AccountAge"] = player.AccountAge,
