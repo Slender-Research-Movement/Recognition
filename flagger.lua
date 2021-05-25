@@ -14,15 +14,37 @@ local localPlr = players.LocalPlayer
 local totalDetect = 0
 local totalPlayers = 0
 
+local ready = 0
+
 local slender = {}
 slender.players = {}
-
+--#@> ========================================
+--#@> Uses a different method to GET when using exploits
 slender.values = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))
 slender.items = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))
 slender.names = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))
+--#@> ========================================
+
+slender.writeLogs = function(header,title,inner,importance)
+	logs = logs.."\n|"..header.."| "..title.." | "..os.date("%X",time)
+	--#@> Importance determines how the log is inlined, for example, system messages have an importance of 3, and have a date.
+	--#@> While flagging and detection messages have an importance of 2 or lower and inline lower than the 3-2
+	
+if importance > 3 then
+		logs = logs.." | "..os.date("%X",time)
+	end
+	end
+
+function setvalues(items,names,values)
+logs = logs.."\n|💈| Values Set (Items, Names, Values) | "..os.date("%X",time)
+	
+end
+
 logs = logs.."\n|💈| Flag Database Prepared | "..os.date("%X",time)
 
+
 slender.identify = function(player)
+		if ready == 0 then return end
 	local itemCount = 0
 	local isAPossibleSlender = false
 	wait(.1)
