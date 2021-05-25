@@ -14,33 +14,44 @@ local localPlr = players.LocalPlayer
 local totalDetect = 0
 local totalPlayers = 0
 
-local ready = 0
+local ready = 1
 
 local slender = {}
 slender.players = {}
 --#@> ========================================
 --#@> Uses a different method to GET when using exploits
-slender.values = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))
-slender.items = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))
-slender.names = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))
+--slender.values = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))
+--slender.items = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))
+--slender.names = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))
 --#@> ========================================
 
+slender.values = nil
+slender.items = nil
+slender.names = nil
+
 slender.writeLogs = function(header,title,inner,importance)
-	logs = logs.."\n|"..header.."| "..title.." | "..os.date("%X",time)
+	logs = logs.."\n"
+	for count = 0, importance, 1 do 
+    logs = logs.." "
+end
+	
+		logs = logs.."|"..header.."| "..title.." | "..inner
 	--#@> Importance determines how the log is inlined, for example, system messages have an importance of 3, and have a date.
 	--#@> While flagging and detection messages have an importance of 2 or lower and inline lower than the 3-2
+
 	
-if importance > 3 then
-		logs = logs.." | "..os.date("%X",time)
-	end
 	end
 
-function setvalues(items,names,values)
-logs = logs.."\n|💈| Values Set (Items, Names, Values) | "..os.date("%X",time)
+function setValues(items,names,values)
 	
+slender.values = values
+slender.items = items
+slender.names = names
+	
+	slender.writeLogs("💈","Values Set (Items, Names, Values)",os.date("%X",time),0)	
 end
 
-logs = logs.."\n|💈| Flag Database Prepared | "..os.date("%X",time)
+	slender.writeLogs("💈","Flag Database Prepared",os.date("%X",time),0)	
 
 
 slender.identify = function(player)
@@ -50,7 +61,7 @@ slender.identify = function(player)
 	wait(.1)
 	local success,info = pcall(players.GetCharacterAppearanceInfoAsync,players,player.UserId)
 	if not success then
-		logs = logs.."\n |🛑| Cannot get appearence info of "..player.Name.." || "..tostring(info).." |🛑| "..os.date("%X",time)
+		slender.writeLogs("🛑","Cannot get appearence info","Player: "..player.Name.." Error: "..tostring(info),0)	
 		return
 	end
 	for _,tbl in next, info['assets'] do
@@ -60,8 +71,8 @@ slender.identify = function(player)
 			isAPossibleSlender = true
 
 			local Asset = facebook_marketplace:GetProductInfo(assetId) --[[Get's Product Information Of The Sound--]]
-
-			logs = logs.."\n   |🚩 +"..slender.values.FLAG_ITEM.."| Flagged Item | "..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name
+			
+		        slender.writeLogs("🚩 +"..slender.values.FLAG_ITEM,"Flagged Item","Player: @"..player.Name.." | Asset ID: "..assetId.." Asset: "..Asset.Name,3)
 			totalFlags = totalFlags + slender.values.FLAG_ITEM
 			itemCount = itemCount + slender.values.FLAG_ITEM
 		end
@@ -72,15 +83,15 @@ slender.identify = function(player)
 		name = slender.names[playerIndex]
 		if player.Name:lower():find(name) then
 			isAPossibleSlender = true
-			logs = logs.."\n    |🏁 +"..slender.values.FLAG_NAME.."| Flagged Name | Player: @"..player.Name.." Name Flagged: "..name
-			totalFlags = totalFlags + slender.values.FLAG_NAME
+					        slender.writeLogs("🏁 +"..slender.values.FLAG_NAME,"Flagged Name","Player: @"..player.Name.." | Name Part: "..name,4)
+                        totalFlags = totalFlags + slender.values.FLAG_NAME
 			itemCount = itemCount + slender.values.FLAG_NAME
 		end
 	end
 
 	if isAPossibleSlender and itemCount >= 3 then
 		totalDetect = totalDetect + 1
-		logs = logs.."\n |💽 "..tostring(itemCount).."| Detected Slender | Player: "..player.Name.." Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount)
+		slender.writeLogs("💽 "..tostring(itemCount),"Detected Slender","Player: @"..player.Name.." | Account Age: "..player.AccountAge.." UserID: "..player.UserId.." Flags: "..tostring(itemCount),4)
 		slender.players[player.Name] = {
 			["Player"] = player,
 			["AccountAge"] = player.AccountAge,
