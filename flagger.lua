@@ -81,7 +81,7 @@ end
 for emoName,slenderList in next, slender.players do
 	resultado = resultado.."\n    [\""..emoName.."\"] = {\n        [\"Player\"] = game.Players[\""..emoName.."\"],\n        [\"Flags\"] = "..slenderList.Flags..",\n        [\"AccountAge\"] = "..slenderList.AccountAge..",\n        [\"UserId\"] = "..slenderList.UserId..",\n   }," 
 end
-logs = logs.."\n\n== Operation Logs END ==\n"
+logs = logs.."\n\n======= | 🎌 END OF LOGS 🎌 | =======\n"
 
 
 function recursiveToString(object)
