@@ -1,10 +1,10 @@
 local lang = {}
 
 lang.Template = {
-Header = "⚜️" --@#> [STRING] Log Emoji Header
-Title = "Template for Pull Requests" --@#> [STRING] Log Title
+Header = "⚜️", --@#> [STRING] Log Emoji Header
+Title = "Template for Pull Requests", --@#> [STRING] Log Title
 --@#> [STRING] Log Inner -> Is to be provided by script
-Importance = 2 --@#> [INT] Describes how many spaces after a '\n'
+Importance = 2, --@#> [INT] Describes how many spaces after a '\n'
   
 --@#> ======== EXAMPLE PRINT ========
 --@#>  |⚜️| Template for Pull Requests | nil
