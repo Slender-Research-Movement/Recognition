@@ -67,8 +67,12 @@ local localPlr = game.Players.LocalPlayer
 starterGui:SetCore("SendNotification", {Title = "Loading flagger.lua", Text = "Please wait a few seconds", Icon = "rbxassetid://6846191221"})
 starterGui:SetCore("ChatMakeSystemMessage",{Text = "== Loading module ==", Font = Enum.Font.Ubuntu})
 
-local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/Compatibility/SynapseX/flagger.lua"))()
-local resultado = "== DATA PRINTED FROM 'SynapseX/flagger.lua' ==\n"
+local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flagger.lua"))()
+values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
+items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
+names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
+result.setValues(items,names,values)
+local resultado = "== DATA PRINTED FROM 'flagger.lua' ==\n"
 resultado = resultado .. "Place Name: ".. result.placeName .." \n"
 resultado = resultado .. "Total Players: ".. tostring(result.TotalPlayers) .. " \n"
 resultado = resultado .. "Total Slenders: "..  tostring(result.TotalSlenders) .. " \n"
