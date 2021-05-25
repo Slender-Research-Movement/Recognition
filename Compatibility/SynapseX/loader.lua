@@ -71,7 +71,7 @@ local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/S
 values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
 items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
 names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
-result.setValues(items,names,values)
+setValues(items,names,values)
 local resultado = "== DATA PRINTED FROM 'flagger.lua' ==\n"
 resultado = resultado .. "Place Name: ".. result.placeName .." \n"
 resultado = resultado .. "Total Players: ".. tostring(result.TotalPlayers) .. " \n"
