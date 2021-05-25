@@ -20,9 +20,9 @@ local slender = {}
 slender.players = {}
 --#@> ========================================
 --#@> Uses a different method to GET when using exploits
-slender.values = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))
-slender.items = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))
-slender.names = require(http:GetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))
+slender.values = nil
+slender.items = nil
+slender.names = nil
 --#@> ========================================
 
 
@@ -49,10 +49,13 @@ slender.names = names
 	
 	slender.writeLogs("💈","Values Set (Items, Names, Values)",os.date("%X",time),0)	
 end
+--#@> DEBUG
 values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
 items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
 names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
 setValues(items,names,values)
+--#@> ======
+
 	slender.writeLogs("💈","Flag Database Prepared",os.date("%X",time),0)	
 
 
