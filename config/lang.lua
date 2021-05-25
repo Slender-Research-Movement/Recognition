@@ -13,6 +13,12 @@ Importance = 2 --@#> [INT] Describes how many spaces after a '\n'
 
 lang.READY = ""
 
+lang.SYS_PRINT = {
+Header = "💈"
+Title = nil
+Importance = 0
+}
+
 lang.APPEARENCE_ERROR = {
 Header = "🛑"
 Title = "Cannot get appearence info"
