@@ -10,6 +10,7 @@ names = {
   "Girl",
   "Itz",
   "It_",
+  "glock",
   "beau",
   "bella",
   "Yara",
