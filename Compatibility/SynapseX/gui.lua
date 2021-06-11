@@ -75,7 +75,7 @@ local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/S
 
 
 
-local library = loadstring(game.HttpGet(game, 'https://pastebin.com/raw/vGwikY93'))()
+local library = loadstring(game:HttpGetAsync('https://pastebin.com/raw/vGwikY93'))()
 
 local w1 = library:Window('Results') -- Text
 
