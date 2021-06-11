@@ -119,11 +119,7 @@ function a:Window(w)
 	z.Position = UDim2.new(0, 0, 0, 34)
 	z.Size = UDim2.new(0, 212, 0, 2)
 	A.Color = ColorSequence.new{
-		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(17, 91, 229)),
-		ColorSequenceKeypoint.new(0.20, Color3.fromRGB(43, 43, 43)),
 		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(26, 75, 255)),
-		ColorSequenceKeypoint.new(0.80, Color3.fromRGB(43, 43, 43)),
-		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(13, 91, 234))
 	}
 	A.Name = "WindowLineGradient"
 	A.Parent = z;
@@ -213,7 +209,7 @@ function a:Window(w)
 		M.Position = UDim2.new(0.0212264154, 0, 0.71676302, 0)
 		M.Size = UDim2.new(0, 203, 0, 26)
 		M.AutoButtonColor = false;
-		M.Font = Enum.Font.GothamSemibold;
+		M.Font = Enum.Font.Code;
 		M.Text = tostring(L) or ""
 		M.TextColor3 = Color3.fromRGB(255, 255, 255)
 		M.TextSize = 14.000;
