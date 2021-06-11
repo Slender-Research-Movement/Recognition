@@ -75,7 +75,7 @@ local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/S
 
 
 
-local library = loadstring(game:HttpGetAsync('https://pastebin.com/raw/vGwikY93'))()
+local library = loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/Compatibility/SynapseX/Gui_Script.lua'))()
 
 local w1 = library:Window('Results') -- Text
 
