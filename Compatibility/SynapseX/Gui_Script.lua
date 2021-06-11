@@ -111,6 +111,8 @@ function a:Window(w)
 	y.BorderSizePixel = 0;
 	y.Position = UDim2.new(0, 25, 0, -30 + 36 * a.windowCount + 6 * a.windowCount)
 	y.Size = UDim2.new(0, 212, 0, 36)
+	local round = Instance.new("UICorner")
+	round.Parent = y
 	Drag(y)
 	z.Name = "WindowLine"
 	z.Parent = y;
@@ -119,7 +121,11 @@ function a:Window(w)
 	z.Position = UDim2.new(0, 0, 0, 34)
 	z.Size = UDim2.new(0, 212, 0, 2)
 	A.Color = ColorSequence.new{
-		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(26, 75, 255)),
+		ColorSequenceKeypoint.new(0.00, Color3.fromRGB(17, 91, 229)),
+		ColorSequenceKeypoint.new(0.20, Color3.fromRGB(17, 91, 229)),
+		ColorSequenceKeypoint.new(0.50, Color3.fromRGB(17, 91, 229)),
+		ColorSequenceKeypoint.new(0.80, Color3.fromRGB(17, 91, 229)),
+		ColorSequenceKeypoint.new(1.00, Color3.fromRGB(17, 91, 229)))
 	}
 	A.Name = "WindowLineGradient"
 	A.Parent = z;
