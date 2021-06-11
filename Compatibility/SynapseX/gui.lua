@@ -59,7 +59,7 @@
 --]]
 
 --[[
-'loader.lua' was made specifically for exploits. Synapse X in particular. This uses a different version of 'flagger.lua' as to be runned from exploit bytecode.
+'gui.lua' was made specifically for exploits. Synapse X in particular. This uses a different version of 'flagger.lua' as to be runned from exploit bytecode.
 --]]
 local starterGui = game:GetService("StarterGui")
 
@@ -71,6 +71,24 @@ local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/S
 --values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
 --items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
 --names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
+
+
+
+
+local library = loadstring(game.HttpGet(game, 'https://pastebin.com/raw/vGwikY93'))()
+
+local w1 = library:Window('Results') -- Text
+
+w1:Button('Print Logs', function()
+    print(result.StringLogs)
+end) -- Text, Callback
+
+
+w1:Label(result.TotalPlayers.. " Players") -- Text
+w1:Label(result.TotalSlenders.. " Slenders") -- Text
+w1:Label(result.TotalFlags.. " Flags") -- Text
+
+
 --setValues(items,names,values)
 local resultado = "== DATA PRINTED FROM 'flagger.lua' ==\n"
 resultado = resultado .. "Place Name: ".. result.placeName .." \n"
@@ -84,7 +102,7 @@ resultado = resultado .. "\n\n == END == \n\n"
 resultado = resultado .. "\n\n == OPERATION LOGS == \n\n"
 resultado = resultado .. result.StringLogs
 resultado = resultado .. "\n\n == END == \n\n"
-print(resultado)
+
 local textNum = 0
 function nameFile()
 	if isfile("Slender Logs/Emo-Logs ("..result.placeName..") - "..textNum..".txt") then
@@ -102,15 +120,11 @@ end
 
 
 --[[--]]
-local BindableFunc = Instance.new("BindableFunction")
-BindableFunc.OnInvoke = function(args)
-    if args == "Yes!" then
-		nameFile()
-	end
-end
 starterGui:SetCore("ChatWindowSize",{windowSize = UDim2.new(0.5,0,1,0)})
+w1:Button('Save Results', function()
+		nameFile()
+end) -- 
+w1:Button('Display Logs in Chat', function()
 starterGui:SetCore("ChatMakeSystemMessage",{Text = result.StringLogs, Font = Enum.Font.Ubuntu})
-starterGui:SetCore("SendNotification", {Title = "There's a total of", Text = ""..result.TotalSlenders.." Slenders with a total of "..result.TotalFlags.." flags in this server", Icon = "rbxassetid://6846191221"})
---game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("There's a total of "..tostring(totalEmos).." emos in this server","All")
+end) -- 
 wait(1.5)
-starterGui:SetCore("SendNotification", {Title = "Save log of Players?", Text = "You will find this in your workspace folder",Icon = "rbxassetid://6846191221" ,Duration = 20, Callback = BindableFunc, Button1 = "Yes!", Button2 = "No"})
