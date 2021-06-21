@@ -8,6 +8,8 @@ items = {
     5319909330, -- Oldschool Walk
     1018553897, -- Bubbly Idle
     139607718,  -- Korblox Right Leg
+    6741572545, -- Y2K Grunge Black Shoulder Bag
+    14127194,   -- WHAAAaaa!
     6201892452, -- Dark Demon Horns
     6564787272, -- Spiked Heart Collar - Rainbow (3.0)
     139607673,  -- Korblox Left Leg
