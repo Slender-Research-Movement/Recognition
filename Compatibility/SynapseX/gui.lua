@@ -66,12 +66,13 @@ local starterGui = game:GetService("StarterGui")
 local localPlr = game.Players.LocalPlayer
 starterGui:SetCore("SendNotification", {Title = "Loading flagger.lua", Text = "Please wait a few seconds", Icon = "rbxassetid://6846191221"})
 starterGui:SetCore("ChatMakeSystemMessage",{Text = "== Loading module ==", Font = Enum.Font.Ubuntu})
+local w2 = library:Window('Scanning...') -- Text
 
 local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flagger.lua"))()
 --values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
 --items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
 --names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
-
+w2:Destroy()
 
 
 
@@ -127,4 +128,8 @@ end) --
 w1:Button('Display Logs in Chat', function()
 starterGui:SetCore("ChatMakeSystemMessage",{Text = result.StringLogs, Font = Enum.Font.Ubuntu})
 end) -- 
+w1:Button('Delete GUI', function()
+    wi:Destroy()
+end) -- Text, Callback
+
 wait(1.5)
