@@ -78,16 +78,22 @@ local result = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/S
 
 
 
-local w1 = library:Window('Results') -- Text
+local Window = library:AddWindow(result.placeName.."  -  Slender Scan Results", {
+  main_color = Color3.fromRGB(28, 73, 238),
+  min_size = Vector2.new(500, 600),
+  toggle_key = Enum.KeyCode.RightShift,
+  can_resize = true,
+})
+local Stats = Window:AddTab("Stats")
 
-w1:Button('Print Logs', function()
-    print(result.StringLogs)
+
+Stats:AddLabel(result.TotalPlayers.. " Players") -- Text
+Stats:AddLabel(result.TotalSlenders.. " Slenders") -- Text
+Stats:AddLabel(result.TotalFlags.. " Flags") -- Text
+local HA = Stats:AddHorizontalAlignment()
+HA:AddButton('Print Logs', function()
+  print(result.StringLogs)
 end) -- Text, Callback
-
-
-w1:Label(result.TotalPlayers.. " Players") -- Text
-w1:Label(result.TotalSlenders.. " Slenders") -- Text
-w1:Label(result.TotalFlags.. " Flags") -- Text
 
 
 --setValues(items,names,values)
@@ -112,6 +118,7 @@ function nameFile()
 	else
 	    if isfolder("Slender Logs") then
 	        		writefile("Slender Logs/Emo-Logs ("..result.placeName..") - "..textNum..".txt", resultado)
+              starterGui:SetCore("SendNotification", {Title = "File Saved", Text = "Slender Logs/Emo-Logs ("..result.placeName..") - "..textNum..".txt", Icon = "rbxassetid://6846191221"})
 	      else
 	          	    local folder = makefolder("Slender Logs")
             namefile()
@@ -122,12 +129,20 @@ end
 
 --[[--]]
 starterGui:SetCore("ChatWindowSize",{windowSize = UDim2.new(0.5,0,1,0)})
-w1:Button('Save Results', function()
+HA:AddButton('Save Results', function()
 		nameFile()
 end) -- 
-w1:Button('Display Logs in Chat', function()
+HA:AddButton('Display Logs in Chat', function()
 starterGui:SetCore("ChatMakeSystemMessage",{Text = result.StringLogs, Font = Enum.Font.Ubuntu})
-end) -- 
+end)
+
+local SLogs = Window:AddTab("Logs")
+local SlLogs = SLogs:AddConsole({
+  ["y"] = 500,
+  ["source"] = "Logs",
+  ["readonly"] = true,
+})
+SlLogs:Set(resultado)
 --w1:Button('Delete GUI', function()
  --   wi:Destroy()
 --end) -- Text, Callback

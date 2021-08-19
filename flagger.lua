@@ -26,7 +26,6 @@ slender.lang = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/S
 slender.items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
 slender.names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
 --#@> ========================================
-print("Made it past CHK 1") --@#> DEBUG Purposes
 
 slender.writeLogs = function(header,title,inner,importance)
 	logs = logs.."\n"
@@ -51,15 +50,9 @@ slender.names = names
 	
 	slender.writeLogs(slender.lang.SYS_PRINT.Header,"Values Set (Items, Names, Values)",os.date("%X",time),0)	
 end
---#@> DEBUG
---values = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/config/values.lua"))()
---items = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/items.lua"))()
---names = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Slender-Research-Movement/Recognition/main/flags/names.lua"))()
---setValues(items,names,values)
---#@> ======
+
 
 	slender.writeLogs(slender.lang.SYS_PRINT.Header,"Flag Database Prepared",os.date("%X",time),0)	
-print("Made it past CHK 2") --@#> DEBUG Purposes
 
 
 slender.identify = function(player)
